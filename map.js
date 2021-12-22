@@ -50,7 +50,7 @@ const students = [
       name: 'Jason',
       profession: 'Designer',
       skill: 'CSS'
-    },
+    }
   ];
 
 const studentsWithIds = students.map(student => [student.name,student.id]);
@@ -59,16 +59,22 @@ console.log('students with ids =', studentsWithIds)
 
 
 // need to find out how to take key value pair for name out of the above objects
-// to get it to work i had to iterate through each student object and pick off the name key value pair and return it
-// so that the console.log below would print it correctly
-
+// to get it to work i had to iterate through each student object and pick off the name key value pair and id key value pair 
+//and return it so that the console.log below would print it correctly, done this as extra challenge.
 
 
 const studentsWithIds2 = students.map(student => {
-  for(p in student) {
-    if (p == 'name') {      
-        return `${p}: ${student[p]}` }
+  for(p in student) {    
+    if (p == 'name' ) {      
+      var x = `${p}: ${student[p]}`
+    }
       };
+  for(g in student) {
+    if (g == 'id') {      
+        var y = `${g}: ${student[g]}`
+      }
+        };  
+    return [x, y ]
     })
 
 console.log('students with ids 2 =', studentsWithIds2)
