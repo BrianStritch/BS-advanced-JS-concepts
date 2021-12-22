@@ -56,7 +56,22 @@ const students = [
 const studentsWithIds = students.map(student => [student.name,student.id]);
 console.log('students with ids =', studentsWithIds)
 
-// need to find out how to take key value pair for name out of the above objects
 
-const studentsWithIds2 = students.map(student => );
+
+// need to find out how to take key value pair for name out of the above objects
+// to get it to work i had to iterate through each student object and pick off the name key value pair and return it
+// so that the console.log below would print it correctly
+
+
+
+const studentsWithIds2 = students.map(student => {
+  for(p in student) {
+    if (p == 'name') {      
+        return `${p}: ${student[p]}` }
+      };
+    })
+
 console.log('students with ids 2 =', studentsWithIds2)
+
+
+
