@@ -73,8 +73,9 @@ const studentsWithIds2 = students.map(student => {
     if (g == 'id') {      
         var y = `${g}: ${student[g]}`
       }
-        };  
-    return [x, y ]
+        }; 
+     
+    return [x,y]
     })
 
 console.log('students with ids 2 =', studentsWithIds2)
