@@ -55,7 +55,7 @@ let students = [
 
 
 /**
- * this one is the closest and the one below 0000000000000000000000000000000000000000000000
+ * these ones is the closest and the ones below 0000000000000000000000000000000000000000000000
  */
 
 const biggest = students.reduce((acc,curr) => {
@@ -76,17 +76,106 @@ const biggest = students.reduce((acc,curr) => {
     }
   },{});
 
-//   const biggest = students.reduce((acc,curr) => {
-//     
+
+// const biggest = students.reduce((acc,curr) => {
 //     let key = curr.name;
 //     if (!acc[key]){
-//               acc[key] = curr.results
-//             } else {
-//               acc[key] = [acc[key],curr.name]
-//             };   {
-//         // if (curr.results.english == tot){
-//         //   return `Name : '${curr.name}', Max: ${curr.results.english}`;  
-//         // }
-//       }},{});
+//           acc[key] = curr.results;
+//         } else {
+//           acc[key] = [acc[key],curr.name];
+//         }return acc 
+//       },{});
 
 console.log(biggest);
+
+
+const biggest = students.reduce((acc,curr) => {
+    let key = curr.name;
+    if (!acc[key]){
+        acc[key] = curr.results
+    } else {
+        acc[key] = [acc[key],curr.name]
+    };    
+    const tot = students.reduce((acc, sub) => acc = acc > sub.results.english? acc : sub.results.english,0);
+    for(s in students){
+        if(students[s].results.english == tot){
+            win = {}
+            win.name = students[s].name;
+            win.max = tot;
+            return win
+        }
+    }
+    },{});
+
+
+
+const biggest = students.reduce((acc,curr) => {
+    let key = curr.name;
+    if (!acc[key]){
+            acc[key] = curr.results;
+            const tot = students.reduce((acc, sub) => acc = acc > sub.results.english? acc : sub.results.english,0);
+            for(let s in students){
+                if(students[s].results.english == tot){
+                    win = {};
+                    win.name = students[s].name;
+                    win.max = tot;
+                    return win;
+                }
+            }
+        
+    }else {
+                acc[key] = [acc[key],curr.name];
+        }
+        },{});
+    console.log(biggest);
+
+
+    const biggest = students.reduce((acc,curr) => {
+        let key = curr.name;
+        if (!acc[key]){
+                acc[key] = curr.results;
+        }
+                else {
+                    acc[key] = [acc[key],curr.name];
+            }
+            },{});
+        console.log(biggest);
+
+
+
+/**
+ * 
+ * same as above
+ */
+
+
+
+
+
+
+
+
+        const tot = students.reduce((acc, sub) => acc = acc > sub.results.english? acc : sub.results.english,0);
+function winner(){
+    for(let s in students){
+    if(students[s].results.english == tot){
+        win = {};
+        win.name = students[s].name;
+        win.max = tot;
+        return win;
+    }
+}
+}
+
+
+const biggest = students.reduce((acc,curr) => {
+    let win = winner();
+        let key = curr.name;
+        if (!acc[key]){
+                acc[key] = curr.results;
+        }
+                else {
+                    acc[key] = [acc[key],curr.name];
+            }return win;
+            },0);
+        console.log(biggest);
