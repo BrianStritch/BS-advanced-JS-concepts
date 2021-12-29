@@ -155,7 +155,9 @@ const biggest = students.reduce((acc,curr) => {
 
 
 
-        const tot = students.reduce((acc, sub) => acc = acc > sub.results.english? acc : sub.results.english,0);
+const tot = students.reduce((acc, sub) => acc = acc > sub.results.english? acc : sub.results.english,0);
+
+
 function winner(){
     for(let s in students){
     if(students[s].results.english == tot){
@@ -166,7 +168,6 @@ function winner(){
     }
 }
 }
-
 
 const biggest = students.reduce((acc,curr) => {
     let win = winner();
