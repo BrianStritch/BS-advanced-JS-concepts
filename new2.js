@@ -47,8 +47,46 @@ let students = [
     }
 ];
 
-const biggest = students.reduce((acc,curr) => {
-   
-},{})
+// const highscore = students.reduce((acc,curr) => {
+//     if(curr.results.english >= acc){
+//             acc = curr.results.english;
+//         }return acc;
+//     },0);
 
-console.log(biggest)
+
+/**
+ * this one is the closest and the one below 0000000000000000000000000000000000000000000000
+ */
+
+const biggest = students.reduce((acc,curr) => {
+    let key = curr.name;
+    if (!acc[key]){
+      acc[key] = curr.results
+    } else {
+      acc[key] = [acc[key],curr.name]
+    };    
+    const tot = students.reduce((acc, sub) => acc = acc > sub.results.english? acc : sub.results.english,0);
+    for(s in students){
+        if(students[s].results.english == tot){
+            win = {}
+            win.name = students[s].name;
+            win.max = tot;
+            return win
+        }
+    }
+  },{});
+
+//   const biggest = students.reduce((acc,curr) => {
+//     
+//     let key = curr.name;
+//     if (!acc[key]){
+//               acc[key] = curr.results
+//             } else {
+//               acc[key] = [acc[key],curr.name]
+//             };   {
+//         // if (curr.results.english == tot){
+//         //   return `Name : '${curr.name}', Max: ${curr.results.english}`;  
+//         // }
+//       }},{});
+
+console.log(biggest);
