@@ -1,6 +1,5 @@
-# Arrow Functions
+# Advanced Javascript concepts
 
-To use this repository:
-- Click the "Use this template" button in the upper right
-- Choose a name for your repository and create it
-- In your own repository, click the green "Gitpod" button
+## __content__
+this contains all the concepts of the CI advanced functions and the challenges to go with them. it also includes multiple 
+explanations and variations of the code.
