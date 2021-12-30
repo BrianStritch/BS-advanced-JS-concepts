@@ -392,3 +392,30 @@ const lowestEnglishScore = students.reduce((lowestScore,student) =>{
 
 console.log('lowestEnglishScore', lowestEnglishScore)  // logs the returned value of lowestEnglishScore to the console
 
+/**
+ * additonal method returning a list of arrays of names with the same age
+ */
+
+const peoplelist = [
+  {name: "Kyle", age: 26},
+  {name: "John", age: 31},
+  {name: "Sally", age: 42},
+  {name: "Jill", age: 42},
+  {name: "Paul", age: 26},
+  {name: "Mary", age: 30},
+  {name: "Jessica", age: 31},
+  {name: 'Brian', age: 37},
+  {name: 'Martin', age:67}
+]
+
+const ageGroup = peoplelist.reduce((groupedPeople, person) =>{
+  const age = person.age
+  if(groupedPeople[age] == null){
+    groupedPeople[age] = []
+    groupedPeople[age].push(person.name)
+  }else{
+    groupedPeople[age].push(person.name)
+  }return groupedPeople
+},{})
+
+console.log('agegroup = ',ageGroup)
