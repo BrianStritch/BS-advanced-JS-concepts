@@ -36,7 +36,16 @@ const averagePoints = (arr, subject) => {
     return result / found     
 }
 
-let result = averagePoints(students, 'english');
+let result = averagePoints(students, 'english');   // will return the average of any subject in the list just change the string text
 console.log(result)
 
-// will return the average of any subject in the list just change the string text
+/**
+ * 1.	Declare a variable named averagePoints using the keyword const
+2.	Assign it an arrow function, which should take two parameters named: arr and subject
+3.	The function should have a return statement
+4.	Declare a variable named: result using the keyword let
+5.	Assign it the return value from calling the function averagePoints, and passing it the students array and one of the following strings: 'maths', 'english', 'cad', 'science', 'art'
+6.	log out the variable result to see its value
+7.	The function should return the correct value no matter which subject is used.
+
+ */
